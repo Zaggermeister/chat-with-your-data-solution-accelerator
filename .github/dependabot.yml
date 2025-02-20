@@ -7,8 +7,42 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
+
+    commit-message:
+      prefix: "build"
+    target-branch: "dependabotchanges"
   - package-ecosystem: "pip"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
+
+
+    commit-message:
+      prefix: "build"
+    groups:
+      langchain:
+        patterns:
+          - "langchain*"
+    open-pull-requests-limit: 50
+    target-branch: "dependabotchanges"
+  - package-ecosystem: "npm"
+    directory: "/code/frontend"
+    schedule:
+      interval: "monthly"
+
+
+    commit-message:
+      prefix: "build"
+    open-pull-requests-limit: 50
+    target-branch: "dependabotchanges"
+  - package-ecosystem: "npm"
+    directory: "/tests/integration/ui"
+    schedule:
+      interval: "monthly"
+
+
+    commit-message:
+      prefix: "build"
+    open-pull-requests-limit: 50
+    target-branch: "dependabotchanges"

@@ -1,16 +1,16 @@
-# Using the web apps in the "Chat with your data" solution accelerator  
+# Using the web apps in the "Chat with your data" solution accelerator
 
 ## Chat app
 
 This solution accelerator provides a web app used for chatting with the LLM using the data you ingest with the [Admin site](#admin-site). This app has a simple interface that enables you and your users to enter prompts and receive responses.
 
-![A screenshot of the chat app.](../media/chat-app.png)
+![A screenshot of the chat app.](images/chat-app.png)
 
 ## Admin site
 
-This solution accelerator provides an "admin" site that enables you to upload, ingest, and explore your data, along with accessing prompt configuration settings. 
+This solution accelerator provides an "admin" site that enables you to upload, ingest, and explore your data, along with accessing prompt configuration settings.
 
-![A screenshot of the admin site.](../media/admin-site.png)
+![A screenshot of the admin site.](images/admin-site.png)
 
 ### Ingesting data
 
@@ -32,15 +32,22 @@ You can see the chunks extracted from your files in the **Explore data** tab.
 TBD
 
 
-## Adding authentication for your web apps
+## Add Authentication in Azure App Service configuration
 
-By default, the web apps have no authentication and can be accessed through the internet by anyone with the apps' URLs. To add authentication (for example, restrict access to the app to members of your Azure tenant):
+1. Click on `Authentication` from left menu.
 
-1. Go to the [Azure portal](https://portal.azure.com/#home) and search for the app name you specified during publishing. Select the web app, and go to the **Authentication** tab on the left navigation menu. Then select **Add an identity provider**. 
+  ![Authentication](images/AppAuthentication.png)
 
-    
-    ![A screenshot of the chat app.](../media/web-app-authentication.png)
+2. Click on `+ Add Provider` to see a list of identity providers.
 
-1. Select Microsoft as the identity provider. The default settings on this page will restrict the app to your tenant only, so you don't need to change anything else here. Then select **Add**.
-    
-    Now users will be asked to sign in with their Azure Active Directory account to be able to access your app. You can follow a similar process to add another identity provider if you prefer. The app doesn't use the user's login information in any other way other than verifying they are a member of your tenant.
+  ![Authentication Identity](images/AppAuthenticationIdentity.png)
+
+3. Click on `+ Add Provider` to see a list of identity providers.
+
+  ![Add Provider](images/AppAuthIdentityProvider.png)
+
+4. Select the first option `Microsoft Entra Id` from the drop-down list.
+ ![Add Provider](images/AppAuthIdentityProviderAdd.png)
+
+5. Accept the default values and click on `Add` button to go back to the previous page with the identify provider added.
+ ![Add Provider](images/AppAuthIdentityProviderAdded.png)
